@@ -1,0 +1,14 @@
+<ion-view view-title="Movies">
+	
+		  <ion-content>
+			
+			<div class="card" ng-repeat="movie in movies"
+							  ng-click="selectMovie(movie)">
+				<div class="item item-text-wrap">
+				  Title: {{movie.title}}<br>
+				  Score: {{movie.score}}
+				</div>
+			</div>
+
+		  </ion-content>
+</ion-view>
