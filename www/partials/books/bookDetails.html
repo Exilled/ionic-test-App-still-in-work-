@@ -1,0 +1,35 @@
+<ion-view view-title="{{book.title}}">
+		  
+		  	<ion-nav-bar class="bar-positive">
+		
+			 <ion-nav-back-button>
+			 </ion-nav-back-button>
+			 
+			</ion-nav-bar>
+		  
+		  
+		  <ion-content scroll="vertical">
+			
+			<div class="item item-avatar">
+					<img src="img/ionic.png">
+					<h2>{{book.title}}</h2>
+					<p>Score: {{book.score}}</p>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="item item-body">
+						<img class="full-image" src="img/ionic.png">
+						
+					</div>
+					<p>
+							{{book.desc}}
+					</p>
+				</div>
+			</div>
+			
+			
+			
+			
+		  </ion-content>
+</ion-view>

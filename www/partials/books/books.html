@@ -1,0 +1,21 @@
+<ion-view view-title="Books">
+		  
+			<ion-nav-bar class="bar-positive">
+				<ion-nav-buttons side="left">
+					<button class="button button-icon button-clear ion-navicon" ng-click="toggle()">
+					</button>
+				</ion-nav-buttons>	
+			</ion-nav-bar>
+		  
+		  <ion-content>
+			
+			<div class="card" ng-repeat="book in books"
+							  ng-click="selectBook(book)">
+				<div class="item item-text-wrap">
+				  Title: {{book.title}}<br>
+				  Score: {{book.score}}
+				</div>
+			</div>
+
+		  </ion-content>
+</ion-view>
