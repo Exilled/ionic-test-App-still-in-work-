@@ -30,6 +30,12 @@ angular.module("moviesApp",[])
 		   
 		   $scope.movie = $stateParams.movie;
 		   
+		   if($scope.movie == null){
+			   $state.go("menu.movies");
+			   
+		   }
+		   
+		   
 		   console.log($scope.movie);
 		   
 		   

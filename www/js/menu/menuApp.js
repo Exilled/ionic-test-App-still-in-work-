@@ -1,6 +1,6 @@
 angular.module("menuApp",[])
 	   .controller("menuController",function($scope,$state,
-					$ionicSideMenuDelegate,$stateParams){
+					$ionicSideMenuDelegate,$stateParams,$ionicHistory){
 			
 			console.log("menuController");
 			
@@ -19,6 +19,7 @@ angular.module("menuApp",[])
 				$scope.activeMenu = menu;
 				$state.go(menu.action);
 				$ionicSideMenuDelegate.toggleLeft(false);
+				$ionicHistory.clearHistory();
 			}
 			$scope.toggle = function() {
 				$ionicSideMenuDelegate.toggleLeft();

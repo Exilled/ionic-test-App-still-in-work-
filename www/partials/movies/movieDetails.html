@@ -1,8 +1,27 @@
 <ion-view view-title="{{movie.title}}">
 	
-		  <ion-content>
+		  <ion-content scroll="vertical">
 			
-			{{movie.desc}}
+			<div class="item item-avatar">
+					<img src="img/ionic.png">
+					<h2>{{movie.title}}</h2>
+					<p>Score: {{movie.score}}</p>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="item item-body">
+						<img class="full-image" src="img/ionic.png">
+						
+					</div>
+					<p>
+							{{movie.desc}}
+					</p>
+				</div>
+			</div>
+			
+			
+			
 			
 		  </ion-content>
 </ion-view>
