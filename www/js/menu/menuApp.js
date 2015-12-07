@@ -13,7 +13,7 @@ angular.module("menuApp",[])
 			{title:"Books",action:"menu.books"}
 			];
 			
-			$scope.activeMenu  = "menu.movies";
+			$scope.activeMenu = "menu.movies";
 
 			$scope.selectMenu = function(menu){
 				$scope.activeMenu = menu.action;

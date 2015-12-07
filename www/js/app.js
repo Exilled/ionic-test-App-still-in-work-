@@ -1,4 +1,4 @@
-angular.module('app', ['ionic','loginApp','menuApp','moviesApp','booksApp'])
+angular.module('app', ['ionic','ngResource','loginApp','menuApp','moviesApp','booksApp'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
