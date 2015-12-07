@@ -13,13 +13,12 @@ angular.module("menuApp",[])
 			{title:"Books",action:"menu.books"}
 			];
 			
-			$scope.activeMenu  = {};
+			$scope.activeMenu  = "menu.movies";
 
 			$scope.selectMenu = function(menu){
-				$scope.activeMenu = menu;
+				$scope.activeMenu = menu.action;
 				$state.go(menu.action);
 				$ionicSideMenuDelegate.toggleLeft(false);
-				$ionicHistory.clearHistory();
 			}
 			$scope.toggle = function() {
 				$ionicSideMenuDelegate.toggleLeft();
@@ -62,5 +61,22 @@ angular.module("menuApp",[])
 						}
 					},
 					params:{ movie: null}
+				}).state('menu.books',{
+					url:"/books",
+						views:{
+							'menuContent':{
+								templateUrl:"partials/books/books.html",
+								controller:"booksController"
+							}
+						}
+					}).state('menu.bookDetails',{
+					url:"/bookDetails",
+					views:{
+						"menuContent":{
+							templateUrl:"partials/books/bookDetails.html",
+							controller:"bookDetailsController",	
+						}
+					},
+					params:{ book: null}
 				});	
 		})

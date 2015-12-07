@@ -11,7 +11,7 @@
 			<ion-list>
 				<ion-item ng-repeat="menu in menus"
 						  ng-click="selectMenu(menu)" 
-						  ng-class="{active: activeMenu == menu}">
+						  ng-class="{active: activeMenu == menu.action}">
 					{{menu.title}}
 				</ion-item>
 			</ion-list>
@@ -21,22 +21,7 @@
 	  <!-- SIDE MENU CONTENT-->
 	  <ion-side-menu-content>
 		  
-		  <ion-nav-bar class="bar-positive">
-		
-			 <ion-nav-back-button>
-			 </ion-nav-back-button>
-
-			<ion-nav-buttons side="left">
-			<button class="button button-icon button-clear ion-navicon" ng-click="toggle()">
-			</button>
-			</ion-nav-buttons>
-			
-			</ion-nav-bar>
-		  
-		  
-			
 		  <ion-nav-view name="menuContent"></ion-nav-view>
-		  
 		  
 	  </ion-side-menu-content>
 

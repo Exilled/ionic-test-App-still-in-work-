@@ -8,9 +8,7 @@ angular.module("loginApp",[])
 			}
 		   
 			function login(user){
-			    
-			   console.log(user);
-			   
+			    			   
 			   $state.go('menu.movies',{user:user});
 			
 		   }
