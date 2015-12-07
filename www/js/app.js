@@ -21,14 +21,6 @@ angular.module('app', ['ionic','loginApp','menuApp','moviesApp'])
 		url:"/login",
 		templateUrl:"partials/login/login.html",
 		controller:"loginController"
-		})
-		.state('menu',{
-			url:"/menu",
-			templateUrl:"partials/menu/menu.html",
-			controller:"menuController",
-			params:{
-				user:null
-			}
 		});
 		
 		

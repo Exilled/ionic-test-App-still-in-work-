@@ -11,7 +11,7 @@ angular.module("loginApp",[])
 			    
 			   console.log(user);
 			   
-			   $state.go('menu',{user:user});
+			   $state.go('menu.movies',{user:user});
 			
 		   }
 	   

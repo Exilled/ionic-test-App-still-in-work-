@@ -1,5 +1,5 @@
 angular.module("moviesApp",[])
-	   .controller("moviesController",function($state,$scope){
+	   .controller("moviesController",function($state,$scope,$stateParams){
 		
 		console.log("moviesController");
 		
@@ -10,9 +10,15 @@ angular.module("moviesApp",[])
 		];
 	   
 	   
-	   $scope.selectMovie = function(movie){
+	   $scope.selectMovie = function(movieSelected){
 		   
-		   $state.go("menu.movieDetails",{movie:movie});
+		   console.log(movieSelected);
+		   
+		   $stateParams.movie = movieSelected;
+		   
+		   console.log($stateParams);
+		   		   
+		   $state.go('menu.movieDetails',{movie:movieSelected});
 		   
 	   }
 	   })
@@ -20,6 +26,11 @@ angular.module("moviesApp",[])
 		   
 		   console.log("movieDetails");
 		   
+		   console.log($stateParams);
+		   
+		   $scope.movie = $stateParams.movie;
+		   
+		   console.log($scope.movie);
 		   
 		   
 		   

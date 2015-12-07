@@ -1,8 +1,10 @@
 angular.module("menuApp",[])
 	   .controller("menuController",function($scope,$state,
-					$ionicSideMenuDelegate){
+					$ionicSideMenuDelegate,$stateParams){
 			
 			console.log("menuController");
+			
+			$scope.user = $stateParams.user;
 			
 			//$state.go('menu.welcome');
 			
@@ -13,8 +15,6 @@ angular.module("menuApp",[])
 			
 			$scope.activeMenu  = {};
 
-
-			
 			$scope.selectMenu = function(menu){
 				$scope.activeMenu = menu;
 				$state.go(menu.action);
@@ -28,25 +28,38 @@ angular.module("menuApp",[])
 	   })
 	   .config(function($stateProvider,$urlRouterProvider){
 		
-			$stateProvider
-				.state('menu.welcome',{
-				url:"/welcome",
-				templateUrl:"partials/welcome/welcome.html",
+			$stateProvider.state('menu',{
+					url:"/menu",
+					templateUrl:"partials/menu/menu.html",
+					controller:"menuController",
+					params:{
+						user:null
+					}
+				}).state('menu.welcome',{
+					url:"/welcome",
+					views:{
+						"menuContent":{
+							templateUrl:"partials/welcome/welcome.html",
+						}
+					}
 				})
 				.state('menu.movies',{
-				url:"/movies",
-				templateUrl:"partials/movies/movies.html",
-				controller:"moviesController"
-				})
+					url:"/movies",
+						views:{
+							'menuContent':{
+								templateUrl:"partials/movies/movies.html",
+								controller:"moviesController"
+							}
+						}
+					})
 				.state('menu.movieDetails',{
-				url:"/movies",
-				templateUrl:"partials/movies/movieDetails.html",
-				controller:"movieDetailsController",
-				params:{
-					movie:null
-				}
-				});
-				
-			$urlRouterProvider.otherwise("/welcome");
-			
+					url:"/moviesDetails",
+					views:{
+						"menuContent":{
+							templateUrl:"partials/movies/movieDetails.html",
+							controller:"movieDetailsController",	
+						}
+					},
+					params:{ movie: null}
+				});	
 		})
