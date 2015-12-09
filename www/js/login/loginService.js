@@ -7,4 +7,14 @@ angular.module("loginServices",[])
 				}
 			});
 			
+		})
+		.factory('SignUp',function($resource){
+			
+			return $resource('http://localhost:3000/accountCreate',{},{
+				query:{
+					method:'POST'
+				}
+			});
+			
+			
 		});

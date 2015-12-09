@@ -1,3 +1,30 @@
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar  class="bar-positive">
+      <h1 class="title">Sign Up</h1>
+    </ion-header-bar>
+    <ion-content>
+		<form>
+			<label class="item item-input">
+					<span class="input-label">Username</span>
+					<input type="text" ng-model="newUser.username">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Password</span>
+					<input type="password" ng-model="newUser.password">
+				</label>
+				<button type="submit" ng-click="methods.register(newUser)" class="button button-block button-calm">
+					Register
+				</button>
+				<button ng-click="methods.closeSignUp()" class="button button-block button-balanced">
+					Close
+				</button>
+				<span ng-show="createError">Username or Password not Filled </span>
+				<span ng-show="created">Account Created</span>
+		</form>
+    </ion-content>
+  </ion-modal-view>
+</script>
 <div>
 	<ion-pane>
 		  <ion-header-bar class="bar bar-header bar-positive">
@@ -17,9 +44,10 @@
 				<button type="submit" ng-click="methods.signin(user)" class="button button-block button-calm">
 					Sign-In
 				</button>
-				<span ng-show="loginError">Username/Password does not exist</span>
-				
-				
+				<button type="submit" ng-click="methods.openSignUp()" class="button button-block button-balanced">
+					Sign-Up
+				</button>
+				<span ng-show="loginError">{{message}}</span>
 			 </form>
 			</div>
 		  </ion-content>
